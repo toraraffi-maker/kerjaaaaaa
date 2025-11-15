@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Alert sederhana saat klik gambar galeri (opsional)
     const galleryImages = document.querySelectorAll('.gallery-img');
     galleryImages.forEach(img => {
         img.addEventListener('click', function() {
