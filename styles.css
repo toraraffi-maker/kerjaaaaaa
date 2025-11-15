@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #B22222;
+    --primary-white: #ffffff;
+    --text-red: #B22222;
+    --shadow: rgba(255, 0, 0, 0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-red);
+    background-color: var(--primary-white);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #800000;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    color: var(--primary-white);
+    font-size: 1.5rem;
+    margin-left: 3rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-right: 3rem;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--primary-white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: gray;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: var(--primary-white);
+    margin: 0.2rem 0;
+}
+
+.hero {
+    height: 30rem;
+    margin-top: 4rem;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: url(assets/pulaumerahbg.jpeg);
+    background-size: cover;
+    color: var(--primary-red);
+}
+
+.hero h2 {
+    margin-top: 5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.description {
+    padding: 4rem 2rem;
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+    text-align: center;
+}
+
+.description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery {
+    padding: 4rem 2rem;
+    background-color: var(--primary-white);
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-red);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem var(--shadow);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: var(--primary-red);
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .description, .gallery {
+        padding: 2rem 1rem;
+    }
+}
